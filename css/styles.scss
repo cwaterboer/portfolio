@@ -3,52 +3,119 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: #e0e0e0;  /* Light gray background */
     box-sizing: border-box;
 }
 
 header {
-    background: #333;
-    color: #fff;
+    background: #e0e0e0;
     padding: 1rem;
     text-align: center;
+    box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;  /* Neomorphic effect */
 }
 
-nav ul {
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+.nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
 }
 
-nav ul li {
+.nav-links li {
     margin: 0 1rem;
 }
 
-nav ul li a {
-    color: #fff;
+.nav-links li a {
+    color: #333;
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;  /* Neomorphic effect */
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;  /* Neomorphic effect */
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
 }
 
 section {
     padding: 2rem;
-    margin: 1rem 0;
+    margin: 1rem auto;
+    max-width: 800px;
+    background: #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;  /* Neomorphic effect */
 }
 
 .project, .skill {
     margin: 1rem 0;
+    padding: 1rem;
+    background: #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;  /* Neomorphic effect */
     position: relative;
+    transition: all 0.3s ease;
+}
+
+.project:hover, .skill:hover {
+    box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;  /* Neomorphic effect */
 }
 
 .info-bubble {
     display: none;
     position: absolute;
-    background: #000;
-    color: #fff;
+    background: #e0e0e0;
+    color: #333;
     padding: 0.5rem;
-    border-radius: 5px;
+    border-radius: 10px;
     top: -50px;
     left: 0;
+    box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;  /* Neomorphic effect */
     z-index: 1000;
 }
 
@@ -59,5 +126,5 @@ section {
     left: 10px;
     border-width: 10px;
     border-style: solid;
-    border-color: #000 transparent transparent transparent;
+    border-color: #e0e0e0 transparent transparent transparent;
 }
